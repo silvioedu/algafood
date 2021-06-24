@@ -1,46 +1,14 @@
-algafood:
-
-  storage:
-    local:
-      diretorio-fotos: C:\\Users\\silvio\\Pictures\\catalogo  
-
-  email:
-    remetente: Algafood <naoresponder@algafood.com.br>
-    impl: fake
-    sandbox: 
-      destinatario: teste@algafood.com.br
-
 spring:
 
   datasource:
     url: jdbc:mysql://${DB_HOST:localhost}:3306/algafood?useSSL=false&createDatabaseIfNotExist=TRUE&allowPublicKeyRetrieval=TRUE&useTimezone=TRUE&serverTimezone=UTC
-    username: root
-    password: 
     platform: mysql
     driver-class-name: com.mysql.cj.jdbc.Driver
     
-    hikari:
-      minimum-idle: 3
-      maximum-pool-size: 5
-      idle-timeout: 10000
-
-  flyway:
-    locations: classpath:db/migration, classpath:db/testdata
-      
   jpa:  
-    #generate-ddl: true
-    #hibernate:
-    #  ddl-auto: update
-    show-sql: true
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
-      #javax:
-      #  persistence:
-      #    schema-generation:
-      #      scripts:
-      #        action: create
-      #        create-target: src/main/resources/ddl.sql
 
   jackson:
     deserialization:
@@ -54,29 +22,6 @@ spring:
     resources:
       add-mappings: false
 
-  #servlet:
-  #  multipart:
-  #    max-file-size: 100KB
-  #    max-request-size: 20MB
-  
   freemarker:
     settings:
       locale: pt_BR
-  
-  mail:
-    host: smtp.sendgrit.net
-    port: 587
-    username: apikey
-    password: lalalanovasenha
- 
-  #security:
-  #  oauth2:
-  #    resourceserver:
-  #      opaquetoken:
-  #        introspection-uri: http://localhost:8081/oauth/check_token
-  #        client-id: ckeckToken
-  #        client-secret: check123
-          
-logging:
-  loggly:
-    token: 6cf533f9-e808-4127-b510-6454e92cf545

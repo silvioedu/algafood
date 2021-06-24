@@ -1,0 +1,24 @@
+spring:
+
+  datasource:
+    username: root
+    password: 
+  
+  jpa:
+    show-sql: true
+    
+  flyway:
+    locations: classpath:db/migration, classpath:db/testdata
+    
+algafood:
+  storage:
+    local:
+      diretorio-fotos: C:\\Users\\silvio\\Pictures\\catalogo  
+
+  email:
+    remetente: Algafood <naoresponder@algafood.com.br>
+    impl: fake
+
+logging:
+  loggly:
+    token: 6cf533f9-e808-4127-b510-6454e92cf545
